@@ -3,6 +3,8 @@ import Home from './pages/Home';
 import About from './pages/AboutUs';
 import Contact from './pages/ContactUs';
 import Login from './pages/Login';
+import Nav from './components/Navbar';
+import 'bootstrap/dist/css/bootstrap.css';
 function App() {
   // Set initial state to display the Home component
   const [page, setPage] = React.useState('home');
@@ -25,15 +27,16 @@ function App() {
   }
 
   return (
+    
     <div>
-      <nav>
+        <Nav/>
         <ul>
           <li><button onClick={() => handlePageChange('home')}>Home</button></li>
           <li><button onClick={() => handlePageChange('about')}>About Us</button></li>
           <li><button onClick={() => handlePageChange('contact')}>Contact Us</button></li>
           <li><button onClick={() => handlePageChange('login')}>Log In</button></li>
         </ul>
-      </nav>
+
       <main>
         {pageComponent}
       </main>
